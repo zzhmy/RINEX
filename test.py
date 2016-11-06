@@ -22,7 +22,7 @@ lastFile=""
 for fileName in glob.glob(r"/mnt/doc2/RINEX211_1H_30S/RefData.15/*/*/*.15o"):  # linux:\
     #print fileName
     # ok = functionTrimbleT02Rinex.trimbleT02Rinex(name, '2016', '0.075', '5311360843', 'TRM59900.00     SCIS', '5247K53946', 'TRIMBLE NETR9', 'y')
-    # print >>fileOut,name
+    # print >>fileOut,name vv
     shortFileName = os.path.basename(fileName) # JLSL273E.15o
     pathName = os.path.dirname(fileName) #/mnt/doc2/RINEX211_1H_30S/RefData.15/Month.Sep/Day.16
 
