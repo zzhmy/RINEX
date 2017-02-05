@@ -1,25 +1,25 @@
-# coding=gbk
+# -*- coding: utf-8 -*-
 """
-ÕâÀï²»ÓÃ#-*- coding: utf-8 -*-
-ÒòÎª¸Ã±àÂë¶Ôºº×Ö²»Ö§³Ö£¬»á³öÏÖÂÒÂë
+è¿™é‡Œä¸ç”¨#-*- coding: utf-8 -*-
+å› ä¸ºè¯¥ç¼–ç å¯¹æ±‰å­—ä¸æ”¯æŒï¼Œä¼šå‡ºç°ä¹±ç 
 """
 # python 2.7
 # by zzh_my@163.com
 """
-¹¦ÄÜ£º°Ñ²»¹æÕûµÄCORSÕ¾RINEXÎÄ¼ş½øĞĞÍ³Ò»¹æÕû£¬×îÖÕÈçÏÂ£º
-¸ùÄ¿Â¼rootCatalg    
+åŠŸèƒ½ï¼šæŠŠä¸è§„æ•´çš„CORSç«™RINEXæ–‡ä»¶è¿›è¡Œç»Ÿä¸€è§„æ•´ï¼Œæœ€ç»ˆå¦‚ä¸‹ï¼š
+æ ¹ç›®å½•rootCatalg    
     2003
        cas1
            cas10010.03o
-ËµÃ÷£º
-³ÌĞò·ÖÎªÁ½²¿·Ö£¬£¨1£©»ñÈ¡Òª¹æÕûµÄRINEXÎÄ¼ş£¬
-                            £¨2£©¶ÁÈ¡RINEXÄê£¬Õ¾Ãû£¬¸ù¾İÕâĞ©ĞÅÏ¢£¬½¨Á¢Ä¿Â¼£¨Èç¹ûÃ»ÓĞµÄ»°£©£¬È»ºó°ÑÎÄ¼ş·ÅÈë¡£
-³ÌĞòÊäÈë²ÎÊı£º
-        fileFromCatalog:Òª¹æÕûµÄÎÄ¼ş¸ùÄ¿Â¼ r"I:\data\lncors\2016"
-        yearF2:ÕûÀíÎÄ¼şµÄÄê·İÇ°2Î»£¬ºóÁ½Î»Í¨¹ıÎÄ¼ş»ñµÃ
+è¯´æ˜ï¼š
+ç¨‹åºåˆ†ä¸ºä¸¤éƒ¨åˆ†ï¼Œï¼ˆ1ï¼‰è·å–è¦è§„æ•´çš„RINEXæ–‡ä»¶ï¼Œ
+                            ï¼ˆ2ï¼‰è¯»å–RINEXå¹´ï¼Œç«™åï¼Œæ ¹æ®è¿™äº›ä¿¡æ¯ï¼Œå»ºç«‹ç›®å½•ï¼ˆå¦‚æœæ²¡æœ‰çš„è¯ï¼‰ï¼Œç„¶åæŠŠæ–‡ä»¶æ”¾å…¥ã€‚
+ç¨‹åºè¾“å…¥å‚æ•°ï¼š
+        fileFromCatalog:è¦è§„æ•´çš„æ–‡ä»¶æ ¹ç›®å½• r"I:\data\lncors\2016"
+        yearF2:æ•´ç†æ–‡ä»¶çš„å¹´ä»½å‰2ä½ï¼Œåä¸¤ä½é€šè¿‡æ–‡ä»¶è·å¾—
 
-³ÌĞòÊä³ö²ÎÊı£º
-        fileOutCatalog:ÕûÀíºó´æ·ÅÊı¾İµÄ¸üÄ¿Â¼  I:\data\lncors\rootcatalog
+ç¨‹åºè¾“å‡ºå‚æ•°ï¼š
+        fileOutCatalog:æ•´ç†åå­˜æ”¾æ•°æ®çš„æ›´ç›®å½•  I:\data\lncors\rootcatalog
 """
 import glob
 import shutil
@@ -29,37 +29,37 @@ import sys
 print "coding by zzh_my@163.com"
 print "2016-11-12\n"
 
-#²ÎÊı×¼±¸
-fileFromCatalog=r"/home/data/data/corsRinex/cmonoc/lncors/2016"  #ÒªÕûÀíµÄÄ¿Â¼
-fileOutCatalog=r"/home/data/data/corsRinex/cmonoc"  #ÕûÀíºóµÄ¸ùÄ¿Â¼
+# å‚æ•°å‡†å¤‡
+fileFromCatalog=r"/home/zzh/work/data/CORS/HLJCORS/history/2016"  # è¦æ•´ç†çš„ç›®å½•
+fileOutCatalog=r"/home/zzh/work/data/CORS/HLJCORS/rinex"  # æ•´ç†åçš„æ ¹ç›®å½•
 yearF2="20"
 
-documentSegment=os.path.sep  ##ÓÃÓÚ·µ»Øµ±Ç°Æ½Ì¨µÄÄ¿Â¼·Ö¸ô·û£¬WindowsÊÇ·´Ğ±¸Ü(\)£¬LinuxÊÇĞ±¸Ü(/)
-for fileName in glob.glob(fileFromCatalog+documentSegment+"*.??[oO]"):  #win10:\,fileName= I:\data\lkcors\2016\zhao2880.16o *.??[oO]
+documentSegment=os.path.sep  ##ç”¨äºè¿”å›å½“å‰å¹³å°çš„ç›®å½•åˆ†éš”ç¬¦ï¼ŒWindowsæ˜¯åæ–œæ (\)ï¼ŒLinuxæ˜¯æ–œæ (/)
+for fileName in glob.glob(fileFromCatalog+documentSegment+"*"+documentSegment+"*"+documentSegment+"*.??[oO]"):  #win10:\,fileName= I:\data\lkcors\2016\zhao2880.16o *.??[oO]
     shortFileName=os.path.basename(fileName).lower()  #zhao2920.16o
-    name4=shortFileName[0:4].lower()            #zhao  Õ¾Ãû
-    lengthName=int(len(shortFileName)) #ÎÄ¼şÃû³¤¶È
-    year4=yearF2+shortFileName[lengthName-3:lengthName-1] #×é×°4×Ö·ûÄê·İ
+    name4=shortFileName[0:4].lower()            #zhao  ç«™å
+    lengthName=int(len(shortFileName)) #æ–‡ä»¶åé•¿åº¦
+    year4=yearF2+shortFileName[lengthName-3:lengthName-1] #ç»„è£…4å­—ç¬¦å¹´ä»½
     
-    #¸ù¾İÕ¾Ãû  Äê·İ ÅĞ¶ÏÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ£¬Èç¹û²»´æÔÚ£¬Ôò ½¨Á¢ÎÄ¼ş¼Ğ£¬
+    #æ ¹æ®ç«™å  å¹´ä»½ åˆ¤æ–­æ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨ï¼Œå¦‚æœä¸å­˜åœ¨ï¼Œåˆ™ å»ºç«‹æ–‡ä»¶å¤¹ï¼Œ
     
-    if not os.path.exists(fileOutCatalog): #ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ£¬·µ»Ø²¼¶ûÖµ
-        print "Î´Ö¸¶¨ÕûÀíºóµÄÄ¿Â¼"
-        sys.exit() #³ÌĞòÍË³ö
+    if not os.path.exists(fileOutCatalog): #åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Œè¿”å›å¸ƒå°”å€¼
+        print "æœªæŒ‡å®šæ•´ç†åçš„ç›®å½•"
+        sys.exit() #ç¨‹åºé€€å‡º
     
-    year4Catalog=fileOutCatalog+documentSegment+year4  #ÅĞ¶ÏÄêÎÄ¼ş¼Ğ£¬²»´æÔÚÔò´´½¨
+    year4Catalog=fileOutCatalog+documentSegment+year4  #åˆ¤æ–­å¹´æ–‡ä»¶å¤¹ï¼Œä¸å­˜åœ¨åˆ™åˆ›å»º
     if not os.path.exists(year4Catalog):
         os.makedirs(year4Catalog)
     
-    fileOutNameCatalog=year4Catalog+documentSegment+name4 #ÅĞ¶ÏÕ¾ÃûÎÄ¼ş¼Ğ£¬²»´æÔÚÔò´´½¨
+    fileOutNameCatalog=year4Catalog+documentSegment+name4 #åˆ¤æ–­ç«™åæ–‡ä»¶å¤¹ï¼Œä¸å­˜åœ¨åˆ™åˆ›å»º
     if not os.path.exists(fileOutNameCatalog):
         os.makedirs(fileOutNameCatalog)    
     
-    #¸´ÖÆÎÄ¼şµ½Ö¸¶¨µÄ¹æÕûÄ¿Â¼ÖĞÈ¥
-    fileRinexOutFullPath=fileOutNameCatalog+documentSegment+shortFileName  #×îÖÕµÄÎÄ¼şÈ«µØÖ·
-    shutil.copy(fileName, fileRinexOutFullPath)  #¸´ÖÆÍê³É
-    print  "ÒÑ¾­¹æÕûÍê³É£º" +shortFileName
+    #å¤åˆ¶æ–‡ä»¶åˆ°æŒ‡å®šçš„è§„æ•´ç›®å½•ä¸­å»
+    fileRinexOutFullPath=fileOutNameCatalog+documentSegment+shortFileName  #æœ€ç»ˆçš„æ–‡ä»¶å…¨åœ°å€
+    shutil.copy(fileName, fileRinexOutFullPath)  #å¤åˆ¶å®Œæˆ
+    print  "å·²ç»è§„æ•´å®Œæˆï¼š" +shortFileName
 
 
-print "³ÌĞòÔËĞĞÍê±Ï£¡£¡"
-a = raw_input('°´ÈÎÒâ¼ü½áÊø³ÌĞò£¡')
+print "ç¨‹åºè¿è¡Œå®Œæ¯•ï¼ï¼"
+a = raw_input('æŒ‰ä»»æ„é”®ç»“æŸç¨‹åºï¼')
